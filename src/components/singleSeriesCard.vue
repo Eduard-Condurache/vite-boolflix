@@ -1,7 +1,7 @@
 <script>
 export default {
   props: {
-    film: Object
+    series: Object
   },
 }
 </script>
@@ -9,19 +9,19 @@ export default {
 <template>
   <div>
     <div>
-      {{ film.title }}
+      {{ series.name }}
     </div>
 
     <div>
-      {{ film.original_title }}
+      {{ series.original_name }}
     </div>
 
     <div>
-      <img :src="film.original_language">
+      <img :src="series.original_language">
     </div>
 
     <div>
-      {{ film.vote_average }}
+      {{ series.vote_average }}
     </div>
   </div>
 </template>
