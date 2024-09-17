@@ -27,7 +27,7 @@ export default {
             :originalTitle="film.original_title"
             :language="film.original_language"
             :vote="film.vote_average"
-            :posterPath="checkCard(index)"/>
+            :posterPath="film.poster_path"/>
           </div>
         </div>
         
