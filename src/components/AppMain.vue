@@ -1,6 +1,6 @@
 <script>
 import { store } from '../store.js'
-import singleFilmCard from './singleFilmCard.vue';
+import singleCard from './singleCard.vue';
 export default {
   data() {
     return { 
@@ -8,35 +8,45 @@ export default {
     }
   },
   components: {
-    singleFilmCard,
+    singleCard,
   }
 }
 </script>
 
 <template>
   <main>
-    <div class="container">
-      <div class="movies-container row d-flex justify-content-center">
-        <div>
+    <div>
+      <div class="px-5">
+        <div class="my-4">
           <h1 class="text-center">FILMS</h1>
         </div>
-        <div v-for="(film, index) in store.allFilms" :key="index" class="col-2 m-2 bg-primary">
-          <singleFilmCard 
+        <div class="movie-container row">
+          <div v-for="(film, index) in store.allFilms" :key="index" class="single-movie col-6 col-sm-4 col-lg-2">
+          <singleCard 
             :title="film.title"
             :originalTitle="film.original_title"
             :language="film.original_language"
-            :vote="film.vote_average"/>
+            :vote="film.vote_average"
+            :posterPath="checkCard(index)"/>
+          </div>
         </div>
-
-        <div>
+        
+        <div class="my-4">
           <h1 class="text-center">TV SERIES</h1>
         </div>
-        <div v-for="(series, index) in store.allSeries" :key="index" class="col-2 m-2 bg-secondary">
-          <singleFilmCard 
+        <div class="series-container row">
+          <div 
+            v-for="(series, index) in store.allSeries" 
+            :key="index" 
+            class="single-series col-6 col-sm-4 col-lg-2">
+
+          <singleCard 
             :title="series.name"
             :originalTitle="series.original_name"
             :language="series.original_language"
-            :vote="series.vote_average"/>
+            :vote="series.vote_average"
+            :posterPath="series.poster_path"/>
+          </div>
         </div>
       </div>
     </div>
@@ -44,5 +54,10 @@ export default {
 </template>
 
 <style lang="scss" scoped>
+
+.single-movie,
+.single-series {
+  margin-bottom: 20px;
+}
 
 </style>

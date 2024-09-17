@@ -1,5 +1,4 @@
 <script>
-import axios from 'axios'
 import { store } from '../store.js'
 
 export default {
@@ -18,7 +17,7 @@ export default {
 
 <template>
   <header>
-    <div class="container">
+    <div class="px-5 py-3 bg-primary">
       <div class="row">
         <div class="col-12 d-flex justify-content-between align-items-center">
           <div>
@@ -40,7 +39,7 @@ export default {
                 placeholder="Cerca un film">
 
                 <button 
-                  class="btn btn-primary ms-3" 
+                  class="btn btn-warning ms-3" 
                   type="submit">
                   Search
                 </button>
