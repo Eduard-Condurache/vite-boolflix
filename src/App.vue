@@ -24,7 +24,6 @@ export default {
             this.store.allFilms = resp.data.results;
             console.log(resp.data.results)
 
-            this.allFilmsFlags();
           })
       }
       else {
@@ -45,15 +44,7 @@ export default {
         this.store.allFilms = [];
       }
     },
-    allFilmsFlags() {
-      this.store.allFilms = this.store.allFilms.map(film => {
-        return {
-          ...film,
-          original_language: `https://flagsapi.com/${film.original_language.toUpperCase()}/shiny/32.png`
-        }
-      })
-    }
-  },
+  }
   
 }
 </script>
@@ -63,6 +54,8 @@ export default {
     <AppHeader @performSearch="getDataFromMovieApi(), getDataFromSeriesApi() "/>
     
     <AppMain />
+
+
   </div>
 </template>
 

@@ -1,31 +1,53 @@
 <script>
 export default {
   props: {
-    film: Object
+    title: String,
+    originalTitle: String,
+    language: String,
+    vote: Number
   },
+  methods: {
+    getFlag(lang) {
+      const validLangs = {
+        en: 'en.gif',
+        it: 'it.gif',
+        ja: 'ja.gif'
+      }
+
+      if (lang in validLangs) {
+        return '/src/assets/langIcons/' + validLangs[lang];
+      }
+      else {
+        return '/src/assets/langIcons/worldflag.png'
+      }
+   }
+  }
 }
 </script>
 
 <template>
   <div>
     <div>
-      {{ film.title }}
+      {{ title }}
     </div>
 
     <div>
-      {{ film.original_title }}
+      {{ originalTitle }}
     </div>
 
     <div>
-      <img :src="film.original_language">
+      <img :src="getFlag(language)" :alt="title">
     </div>
 
     <div>
-      {{ film.vote_average }}
+      {{ vote }}
     </div>
   </div>
+
 </template>
 
 <style lang="scss" scoped>
-
+  img {
+    width: 25px;
+  }
 </style>
