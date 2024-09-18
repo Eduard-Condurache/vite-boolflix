@@ -21,7 +21,9 @@ export default {
           <h1 class="text-center">FILMS</h1>
         </div>
         <div class="movie-container row">
-          <div v-for="(film, index) in store.allFilms" :key="index" class="single-movie col-6 col-sm-4 col-lg-2">
+          <div v-for="(film, index) in store.allFilms" 
+            :key="index" 
+            class="single-movie col-6 col-sm-4 col-lg-3 col-xl-2">
           <singleCard 
             :title="film.title"
             :originalTitle="film.original_title"
@@ -38,7 +40,7 @@ export default {
           <div 
             v-for="(series, index) in store.allSeries" 
             :key="index" 
-            class="single-series col-6 col-sm-4 col-lg-2">
+            class="single-series col-6 col-sm-4 col-lg-3 col-xl-2">
 
           <singleCard 
             :title="series.name"

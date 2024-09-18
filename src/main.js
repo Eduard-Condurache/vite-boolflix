@@ -13,11 +13,11 @@ import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
 /* import specific icons */
-import { fas } from '@fortawesome/free-solid-svg-icons'
-import { far } from '@fortawesome/free-regular-svg-icons'
+import { faStar as faSolidStar } from '@fortawesome/free-solid-svg-icons'
+import { faStar as faRegularStar } from '@fortawesome/free-regular-svg-icons'
 
 /* add icons to the library */
-library.add(fas,far)
+library.add(faSolidStar,faRegularStar)
 
 
 createApp(App)
