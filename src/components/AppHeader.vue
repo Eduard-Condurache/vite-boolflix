@@ -17,14 +17,12 @@ export default {
 
 <template>
   <header>
-    <div class="px-5 py-3 bg-primary">
+    <div class="px-5 py-3">
       <div class="row">
         <div class="col-12 d-flex justify-content-between align-items-center">
           <div>
             <div class="logo">
-              <h1>
-                Boolflix
-              </h1>
+              <img src="/src/assets/img/Boolflix-18-09-2024.png" alt="logo">
             </div>
           </div>
 
@@ -34,12 +32,12 @@ export default {
               @submit.prevent="performSearch()">
               <input 
                 type="text" 
-                class="form-control"
+                class="header-input"
                 v-model="store.searchFilm"
-                placeholder="Cerca un film">
+                placeholder="Cerca un film e una serie">
 
                 <button 
-                  class="btn btn-warning ms-3" 
+                  class="btn btn-outline-light ms-3" 
                   type="submit">
                   Search
                 </button>
@@ -52,7 +50,28 @@ export default {
 </template>
 
 <style lang="scss" scoped>
+
+  header {
+    background-color: #0C0C0C;
+
+    .header-input {
+      border: 1px solid white;
+      background-color: black;
+      color: white;
+      width: 200px;
+      font-size: 0.9rem;
+    }
+  }
+  
+  .logo {
+    width: 20%;
+
+    img {
+      max-width: 100%;
+    }
+  }
   h1 {
     text-align: center;
+    color: white;
   }
 </style>

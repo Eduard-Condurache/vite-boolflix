@@ -1,9 +1,6 @@
 @use 'variables' as *;
 
-@mixin default-color {
-    color: $mainColor;
-}
-
-@mixin default-bg-color {
-    background-color: $mainColor;
+@mixin maxSize {
+    width: 100%;
+    height: 100%;
 }

@@ -46,7 +46,7 @@ export default {
 </script>
 
 <template>
-  <div>
+  <div class="page-container">
     <AppHeader @performSearch="getDataFromApi() "/>
     
     <AppMain />
@@ -58,4 +58,8 @@ export default {
 <style lang="scss">
 @use 'assets/scss/main' as *;
 @import "bootstrap/scss/bootstrap";
+
+.page-container {
+  background-color: #141414;
+}
 </style>

@@ -18,7 +18,7 @@ export default {
     <div>
       <div class="px-5">
         <div class="my-4">
-          <h1 class="text-center">FILMS</h1>
+          <h1 class="text-start text-white">Film</h1>
         </div>
         <div class="movie-container row">
           <div v-for="(film, index) in store.allFilms" 
@@ -29,12 +29,13 @@ export default {
             :originalTitle="film.original_title"
             :language="film.original_language"
             :vote="film.vote_average"
-            :posterPath="film.poster_path"/>
+            :posterPath="film.poster_path"
+            :overview="film.overview"/>
           </div>
         </div>
         
         <div class="my-4">
-          <h1 class="text-center">TV SERIES</h1>
+          <h1 class="text-start text-white">Tv series</h1>
         </div>
         <div class="series-container row">
           <div 
@@ -47,7 +48,8 @@ export default {
             :originalTitle="series.original_name"
             :language="series.original_language"
             :vote="series.vote_average"
-            :posterPath="series.poster_path"/>
+            :posterPath="series.poster_path"
+            :overview="series.overview"/>
           </div>
         </div>
       </div>
