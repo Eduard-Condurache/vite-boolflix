@@ -63,7 +63,8 @@ export default {
     }
   }
   .logo {
-    width: 20%;
+    width: 100px;
+    margin-right: 10px;
 
     img {
       max-width: 100%;

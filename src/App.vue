@@ -9,7 +9,8 @@ export default {
   data () {
     return {
       apiKey: '28796c639fb17f6004d20cb8b0eea28d',
-      store
+      store,
+      activeSearch: false
     }
   },
   created() {
@@ -38,10 +39,13 @@ export default {
             this.store.allSeries = seriesResp.data.results;
             console.log(seriesResp.data.results);
           });
+
+          this.activeSearch = true;
       } 
       else {
         this.store.allFilms = [];
         this.store.allSeries = [];
+        this.activeSearch = true;
       }
     },
     getDataFromTopRatedApi() {
@@ -51,7 +55,7 @@ export default {
           this.store.topRated = resp.data.results
           console.log(resp.data.results)
         })
-    }
+    },
   }
   
 }
@@ -61,7 +65,7 @@ export default {
   <div>
     <AppHeader @performSearch="getDataFromApi() "/>
     
-    <AppMain />
+    <AppMain :activeSearch="activeSearch"/>
 
 
   </div>
