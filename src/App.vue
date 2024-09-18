@@ -12,6 +12,9 @@ export default {
       store
     }
   },
+  created() {
+    this.getDataFromTopRatedApi();
+  },
   components: {
     AppHeader,
     AppMain
@@ -40,6 +43,14 @@ export default {
         this.store.allFilms = [];
         this.store.allSeries = [];
       }
+    },
+    getDataFromTopRatedApi() {
+      axios
+        .get('https://api.themoviedb.org/3/movie/top_rated?api_key=' + this.apiKey + '&language=it-IT')
+        .then((resp) => {
+          this.store.topRated = resp.data.results
+          console.log(resp.data.results)
+        })
     }
   }
   

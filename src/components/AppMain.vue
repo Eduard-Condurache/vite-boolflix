@@ -17,6 +17,23 @@ export default {
   <main>
     <div>
       <div class="px-5">
+
+        <!-- TOP RATED SECTION -->
+        <div class="toprated-container row my-4">
+          <div v-for="(top, index) in store.topRated" 
+            :key="index" 
+            class="single-movie col-6 col-sm-4 col-lg-3 col-xl-2">
+          <singleCard 
+            :title="top.title"
+            :originalTitle="top.original_title"
+            :language="top.original_language"
+            :vote="top.vote_average"
+            :posterPath="top.poster_path"
+            :overview="top.overview"/>
+          </div>
+        </div>
+
+        <!-- MOVIE SECTION -->
         <div class="my-4">
           <h1 class="text-start text-white">Film</h1>
         </div>
@@ -33,7 +50,8 @@ export default {
             :overview="film.overview"/>
           </div>
         </div>
-        
+
+        <!-- SERIES SECTION -->
         <div class="my-4">
           <h1 class="text-start text-white">Tv series</h1>
         </div>
