@@ -106,14 +106,12 @@ export default {
 @use '../assets/scss/partials/variables' as *;
 
 .poster-card {
-  width: 100%;
-  height: 100%;
+  @include maxSize;
   position: relative;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 
   > img {
-    max-width: 100%;
-    height: 100%;
+    @include maxSize;
     display: block;
   }
 
@@ -123,9 +121,14 @@ export default {
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
   }
 
+  .flag-icons img {
+    width: 15px;
+    height: 10px;
+  }
+
+
   .infos {
-    width: 100%;
-    height: 100%;
+    @include maxSize;
     top: 0;
     left: 0;
     position: absolute;
@@ -157,9 +160,4 @@ export default {
     opacity: 1;
   }
 }
-
-  .flag-icons img {
-    width: 25px;
-  }
-
 </style>

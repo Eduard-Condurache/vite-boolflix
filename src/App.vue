@@ -8,6 +8,7 @@ import { store } from './store.js'
 export default {
   data () {
     return {
+      apiKey: '28796c639fb17f6004d20cb8b0eea28d',
       store
     }
   },
@@ -17,9 +18,9 @@ export default {
   },
   methods: {
     getDataFromApi() {
-      if (this.store.searchFilm.trim() != '') {
-        const movieApiUrl = 'https://api.themoviedb.org/3/search/movie?api_key=28796c639fb17f6004d20cb8b0eea28d&language=it-IT&query=' + this.store.searchFilm;
-        const seriesApiUrl = 'https://api.themoviedb.org/3/search/tv?api_key=28796c639fb17f6004d20cb8b0eea28d&language=it-IT&query=' + this.store.searchFilm;
+      if (this.store.search.trim() != '') {
+        const movieApiUrl = 'https://api.themoviedb.org/3/search/movie?api_key=' + this.apiKey + '&language=it-IT&query=' + this.store.search;
+        const seriesApiUrl = 'https://api.themoviedb.org/3/search/tv?api_key=' + this.apiKey + '&language=it-IT&query=' + this.store.search;
 
         axios
           .get(movieApiUrl)
@@ -46,7 +47,7 @@ export default {
 </script>
 
 <template>
-  <div class="page-container">
+  <div>
     <AppHeader @performSearch="getDataFromApi() "/>
     
     <AppMain />
@@ -59,7 +60,4 @@ export default {
 @use 'assets/scss/main' as *;
 @import "bootstrap/scss/bootstrap";
 
-.page-container {
-  background-color: #141414;
-}
 </style>

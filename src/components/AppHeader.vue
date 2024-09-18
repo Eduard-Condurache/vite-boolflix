@@ -33,7 +33,7 @@ export default {
               <input 
                 type="text" 
                 class="header-input"
-                v-model="store.searchFilm"
+                v-model="store.search"
                 placeholder="Cerca un film e una serie">
 
                 <button 
@@ -62,16 +62,11 @@ export default {
       font-size: 0.9rem;
     }
   }
-  
   .logo {
     width: 20%;
 
     img {
       max-width: 100%;
     }
-  }
-  h1 {
-    text-align: center;
-    color: white;
   }
 </style>
